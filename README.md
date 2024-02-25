@@ -51,5 +51,5 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 ## Image
 
-<img src="https://i.imgur.com/auou5LN.jpeg" alt="Image" width="400" height="400">
+<img src="https://i.imgur.com/auou5LN.jpeg" alt="Image" width="700" height="713">
 
