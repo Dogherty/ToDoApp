@@ -75,5 +75,4 @@
 5. Надішліть pull-запит.
 
 ## Зображення
-
-<img src="https://i.imgur.com/auou5LN.jpeg" alt="Зображення" width="700" height="700">
+<div align="center"><img src="https://i.imgur.com/auou5LN.jpeg" alt="Зображення" width="700" height="700"></div>
