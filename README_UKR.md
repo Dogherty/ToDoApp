@@ -32,6 +32,25 @@
     ```bash
    python todo.py
 
+
+<strong>(Увага)</strong> Якщо ви зіткнулися з помилкою: `Error in database connection and app initialization: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to obtain local issuer certificate (_ssl.c:1007)>`,  виконайте наступні дії:
+
+1. Імпорт бібліотеки `ssl`:
+   ```python
+   import flet as ft
+   import sqlite3
+   import ssl # імпортуйте цю бібліотеку
+
+2. Помістіть наступний рядок у блок `main` у другому блоці `try/except`:
+   ```python
+   ssl._create_default_https_context = ssl._create_unverified_context # додайте цей рядок
+   conn = sqlite3.connect('todo.db')
+   cursor = conn.cursor()
+   ```
+	Ця строка коду обходить помилку перевірки сертифіката SSL, дозволяючи з'єднання з захищеними ресурсами без необхідності перевірки сертифіката.
+
+Ця помилка виникає через невдалу перевірку сертифіката SSL під час ініціалізації підключення до бази даних та додатку.
+
 ## Використання
 
 1. Додайте нове завдання, ввівши назву завдання в поле введення і натиснувши Enter або натиснувши кнопку "+".
