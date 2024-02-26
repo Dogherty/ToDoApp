@@ -12,25 +12,43 @@ You will need the following dependencies listed in the `requirements.txt` file t
 ## Installation
 
 1. Clone the project repository to your local computer:
-    ```bash
+    ```python
    git clone https://github.com/Dogherty/ToDoApp.git
 2. Create and activate a virtual environment for the project:
-    ```bash
+    ```python
    python -m venv myenv
     source myenv/bin/activate
 
 3. Open the project directory
-    ```bash
+    ```python
    cd ToDoList
 
 4. Install the Python dependencies specified in requirements.txt:
-   
-	```bash
+	```python
 	pip install -r requirements.txt
 
 5. Run the application:
-    ```bash
+    ```python
    python todo.py
+
+
+<strong>(Warning)</strong> If you encounter the error `Error in database connection and app initialization: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to obtain local issuer certificate (_ssl.c:1007)>`, follow these steps:
+
+1. Import ssl library:
+   ```python
+   import flet as ft
+   import sqlite3
+   import ssl # import this library
+
+2. Put the following string into second try\except block in `main`:
+   ```python
+   ssl._create_default_https_context = ssl._create_unverified_context # add this string
+   conn = sqlite3.connect('todo.db')
+   cursor = conn.cursor()
+   ```
+	This line of code bypasses the SSL certificate validation error by allowing connections to protected resources without requiring certificate validation.
+
+This error occurs due to failed SSL certificate validation during initialization of the database and application connection. 
 
 ## Usage
 
