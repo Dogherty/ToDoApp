@@ -76,4 +76,4 @@
 
 ## Зображення
 
-<img src="https://i.imgur.com/auou5LN.jpeg" alt="Зображення" width="400" height="400">
+<img src="https://i.imgur.com/auou5LN.jpeg" alt="Зображення" width="700" height="700">
